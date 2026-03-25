@@ -25,10 +25,11 @@ import { TeachingStyleManager } from './teaching-styles.js';
 import { Curriculum } from './curriculum.js';
 import { SkillTree } from './skill-tree.js';
 import { DiscoveryZone, discoveryFromStep } from './discovery.js';
-import { SkillTree } from './skill-tree.js';
 import { SpacedRepetition } from './spaced-repetition.js';
-import { PeerLearning } from './peer-learning.js';
-import { AdaptiveDifficulty } from './adaptive.js';
+
+// Re-export for convenience
+import { PeerLearningSystem } from './peer-learning.js';
+import { AdaptiveEngine } from './adaptive.js';
 
 export { Course } from './course.js';
 export { NPCTeacher } from './npc-teacher.js';
@@ -39,11 +40,10 @@ export { Quiz } from './quiz.js';
 export { AchievementSystem } from './achievements.js';
 export { TeachingStyleManager } from './teaching-styles.js';
 export { Curriculum } from './curriculum.js';
-export { SkillTree } from './skill-tree.js';
 export { DiscoveryZone, discoveryFromStep } from './discovery.js';
 export { SpacedRepetition } from './spaced-repetition.js';
-export { PeerLearning } from './peer-learning.js';
-export { AdaptiveDifficulty } from './adaptive.js';
+export { PeerLearningSystem } from './peer-learning.js';
+export { AdaptiveEngine } from './adaptive.js';
 
 /**
  * Register courses features with CraftMind Core.
@@ -447,4 +447,9 @@ function sleep(ms) {
   return new Promise(r => setTimeout(r, ms));
 }
 
-main().catch(console.error);
+// Only run CLI when executed directly (not imported)
+import { fileURLToPath } from 'url';
+import path from 'path';
+if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
+  main().catch(console.error);
+}
