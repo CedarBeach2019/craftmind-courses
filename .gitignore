@@ -4,3 +4,5 @@ node_modules/
 progress/
 .DS_Store
 progress/\ntmp/
+node_modules/
+tmp/
