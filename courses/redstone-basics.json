@@ -1,0 +1,175 @@
+{
+  "id": "redstone-basics",
+  "title": "Redstone Basics",
+  "description": "Learn the fundamentals of Minecraft redstone engineering — from torches to logic gates!",
+  "author": "CraftMind",
+  "lessons": [
+    {
+      "id": "rb-torches",
+      "title": "Lesson 1: Redstone Torches",
+      "description": "Discover the power source that started it all — the humble redstone torch!",
+      "objectives": ["Understand what redstone torches do", "Place a redstone torch to power a block", "See how torches create signals"],
+      "prerequisites": [],
+      "difficulty": 1,
+      "estimatedMinutes": 10,
+      "steps": [
+        { "type": "navigate_to", "description": "Walk to the redstone lab (follow the torches!)", "target": { "x": 10, "y": 64, "z": 10 } },
+        { "type": "observe", "description": "Look at the demo setup — a redstone torch powering a lamp" },
+        { "type": "build_block", "description": "Place a redstone torch on the marked block to power the lamp next to it" },
+        { "type": "interact_npc", "description": "Talk to ProfBlock to explain what you observed about the torch signal" },
+        { "type": "solve_puzzle", "description": "Power all 3 lamps using only 2 redstone torches — find the right positions!" }
+      ],
+      "quiz": [
+        {
+          "question": "What does a redstone torch power?",
+          "type": "multiple_choice",
+          "options": ["Only the block it's placed on", "All adjacent blocks and redstone dust", "Nothing — it's just decoration"],
+          "answer": "All adjacent blocks and redstone dust",
+          "explanation": "A redstone torch powers the block it's attached to and all adjacent blocks, plus any redstone dust connected to those blocks."
+        },
+        {
+          "question": "Can a redstone torch be placed on any side of a block?",
+          "type": "multiple_choice",
+          "options": ["Yes, any side", "Only on top", "On top and on the four sides, but not the bottom"],
+          "answer": "On top and on the four sides, but not the bottom",
+          "explanation": "Redstone torches can be placed on top and the four vertical sides of most solid blocks, but not underneath."
+        },
+        {
+          "question": "What happens when a block already powered by redstone has a torch placed on it?",
+          "type": "open_ended",
+          "answer": ["burns out", "turns off", "goes out", "pops off"],
+          "explanation": "A redstone torch on a powered block will turn off (and eventually burn out if toggled rapidly). This is the key to NOT gates!"
+        }
+      ]
+    },
+    {
+      "id": "rb-dust",
+      "title": "Lesson 2: Redstone Dust & Wiring",
+      "description": "Learn how redstone dust carries signals — think of it as Minecraft's electrical wiring!",
+      "objectives": ["Place redstone dust to create a signal path", "Understand signal strength decreases over distance", "Connect a power source to a device"],
+      "prerequisites": ["rb-torches"],
+      "difficulty": 1,
+      "estimatedMinutes": 10,
+      "steps": [
+        { "type": "navigate_to", "description": "Head to the wiring workshop at the next station", "target": { "x": 20, "y": 64, "z": 10 } },
+        { "type": "observe", "description": "Check out the long redstone dust trail — notice how the lamp brightness changes with distance" },
+        { "type": "build_block", "description": "Build your own redstone wire: place dust from the lever to the lamp, exactly 15 blocks long" },
+        { "type": "complete_challenge", "description": "Add a repeater at block 8 to extend the signal — the lamp at the end should now be fully lit!" }
+      ],
+      "quiz": [
+        {
+          "question": "How far can a redstone dust signal travel before it dies?",
+          "type": "multiple_choice",
+          "options": ["10 blocks", "15 blocks", "32 blocks", "Unlimited"],
+          "answer": "15 blocks",
+          "explanation": "Redstone signals start at strength 15 and decrease by 1 for each block of dust. After 15 blocks, the signal reaches 0 and dies."
+        },
+        {
+          "question": "What item can extend a redstone signal beyond 15 blocks?",
+          "type": "open_ended",
+          "answer": ["repeater", "redstone repeater"],
+          "explanation": "A redstone repeater refreshes a signal to full strength (15), allowing you to extend circuits indefinitely."
+        }
+      ]
+    },
+    {
+      "id": "rb-repeaters",
+      "title": "Lesson 3: Repeaters & Comparators",
+      "description": "Master the repeater — the workhorse of every redstone circuit!",
+      "objectives": ["Place and orient a redstone repeater", "Understand repeater delay settings", "Use a repeater as a diode (one-way signal)"],
+      "prerequisites": ["rb-dust"],
+      "difficulty": 2,
+      "estimatedMinutes": 15,
+      "steps": [
+        { "type": "navigate_to", "description": "Move to the repeater testing station", "target": { "x": 30, "y": 64, "z": 10 } },
+        { "type": "observe", "description": "Flip the lever and watch the 4 repeaters — notice how each has a different delay" },
+        { "type": "build_block", "description": "Create a circuit with 3 repeaters set to 2-tick delay each, then time how long the lamp takes to light" },
+        { "type": "solve_puzzle", "description": "Build a signal that reaches the lamp in exactly 4 ticks using only repeaters (tip: 2+2, 1+3, etc.)" }
+      ],
+      "quiz": [
+        {
+          "question": "How many tick delay settings does a repeater have?",
+          "type": "multiple_choice",
+          "options": ["1", "2", "4", "8"],
+          "answer": "4",
+          "explanation": "A repeater has 4 delay settings: 1, 2, 3, and 4 redstone ticks (each = 2 game ticks). Right-click to cycle through them."
+        },
+        {
+          "question": "True or false: a repeater can send a signal backwards.",
+          "type": "open_ended",
+          "answer": ["false", "no"],
+          "explanation": "Repeaters are diodes — they only pass signals in one direction (the direction they're facing). This is incredibly useful for preventing signal interference."
+        }
+      ]
+    },
+    {
+      "id": "rb-pistons",
+      "title": "Lesson 4: Pistons & Doors",
+      "description": "Make things move! Build your first piston-powered redstone door!",
+      "objectives": ["Understand how pistons are powered", "Build a 2x2 piston door", "Use redstone to trigger the door with a button"],
+      "prerequisites": ["rb-repeaters"],
+      "difficulty": 2,
+      "estimatedMinutes": 15,
+      "steps": [
+        { "type": "navigate_to", "description": "Enter the piston workshop through... well, you'll build the entrance!", "target": { "x": 40, "y": 64, "z": 10 } },
+        { "type": "observe", "description": "Watch the demo: a sticky piston pulls and pushes blocks when powered/unpowered" },
+        { "type": "build_block", "description": "Place 2 pistons (1 sticky, 1 regular) as shown in the diagram on the wall" },
+        { "type": "build_block", "description": "Wire up a button to both pistons — press it and your door should open!" },
+        { "type": "complete_challenge", "description": "Modify the circuit so the door closes automatically after 3 seconds (hint: use a repeater as a delay)" }
+      ],
+      "quiz": [
+        {
+          "question": "What's the difference between a piston and a sticky piston?",
+          "type": "multiple_choice",
+          "options": ["Sticky is faster", "Sticky can pull blocks back", "Regular is stronger", "No difference"],
+          "answer": "Sticky can pull blocks back",
+          "explanation": "A sticky piston has slime on its face — when it retracts, it pulls the block in front of it back too. Regular pistons just push."
+        },
+        {
+          "question": "What happens if you power a piston while something is already in front of it?",
+          "type": "open_ended",
+          "answer": ["nothing", "it doesn't extend", "it breaks"],
+          "explanation": "The piston won't extend if there's a block (or entity) blocking it. Redstone only works if there's room for the mechanism to move!"
+        }
+      ]
+    },
+    {
+      "id": "rb-logic",
+      "title": "Lesson 5: Basic Logic Gates",
+      "description": "The building blocks of computing — AND, OR, and NOT gates, all in Minecraft!",
+      "objectives": ["Build a NOT gate using a redstone torch", "Build an AND gate using 2 torches", "Understand how logic gates combine to make decisions"],
+      "prerequisites": ["rb-pistons"],
+      "difficulty": 3,
+      "estimatedMinutes": 20,
+      "steps": [
+        { "type": "navigate_to", "description": "Enter the Logic Lab — welcome to computer science! 🖥️", "target": { "x": 50, "y": 64, "z": 10 } },
+        { "type": "observe", "description": "Study the 3 demo gates (NOT, AND, OR) — flip their input levers and watch the output lamps" },
+        { "type": "build_block", "description": "Build a NOT gate: place a block, put a torch on it, wire input to the block — torch output is inverted!" },
+        { "type": "solve_puzzle", "description": "Build an AND gate: both input levers must be ON for the lamp to light. Use 2 torches and 1 dust line." },
+        { "type": "complete_challenge", "description": "BONUS: Combine NOT + AND to make a NAND gate, then use it to open the exit door! Only 1 correct lever combo works!" }
+      ],
+      "quiz": [
+        {
+          "question": "In a NOT gate, what happens when the input is ON (powered)?",
+          "type": "multiple_choice",
+          "options": ["Output is ON", "Output is OFF", "Output flickers", "The torch explodes"],
+          "answer": "Output is OFF",
+          "explanation": "A NOT gate inverts the signal. When you power the block a torch is on, the torch turns OFF — the output is the opposite of the input."
+        },
+        {
+          "question": "For an AND gate, how many inputs must be ON for the output to be ON?",
+          "type": "multiple_choice",
+          "options": ["Any 1", "All of them", "None", "Exactly half"],
+          "answer": "All of them",
+          "explanation": "An AND gate only outputs ON when ALL inputs are ON. It's like a security door that needs every lock to be unlocked."
+        },
+        {
+          "question": "What real-world device uses AND logic?",
+          "type": "open_ended",
+          "answer": ["microwave", "safety switch", "elevator", "car", "washing machine"],
+          "explanation": "Many devices use AND logic! A microwave door AND start button must both be activated. A washing machine won't spin until the door is locked AND water is filled AND cycle is set."
+        }
+      ]
+    }
+  ]
+}
