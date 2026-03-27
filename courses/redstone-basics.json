@@ -206,6 +206,95 @@
           "explanation": "Many devices use AND logic! A microwave door AND start button must both be activated. A washing machine won't spin until the door is locked AND water is filled AND cycle is set."
         }
       ]
+    },
+    {
+      "id": "rb-fishing-farm",
+      "title": "Lesson 6: Automated Fishing Farm",
+      "description": "Build your first automated machine! Connect your redstone skills to fishing mastery.",
+      "objectives": ["Understand clock circuits and timing", "Build an automated fishing rod trigger", "Connect redstone to water mechanics", "Apply skills from the fishing minigame"],
+      "prerequisites": ["rb-pistons"],
+      "difficulty": 3,
+      "estimatedMinutes": 25,
+      "crossGameConnections": {
+        "game": "craftmind-fishing",
+        "concepts": ["tides", "currents", "baitfish", "patience"],
+        "insight": "Just like you learned about patience and timing in fishing, redstone clocks teach you about automation timing. Both skills connect!"
+      },
+      "steps": [
+        { "type": "navigate_to", "description": "Head to the Waterworks Lab at the waterfront", "target": { "x": 60, "y": 64, "z": 10 } },
+        { "type": "observe", "description": "Check out the demo fishing auto-farmer — watch how the clock circuit triggers the fishing rod automatically!" },
+        { "type": "build_block", "description": "Build a clock circuit: place 2 repeaters facing each other in a loop, creating an endless on-off pulse" },
+        { "type": "build_block", "description": "Place a tripwire hook above the water and connect your clock circuit to it" },
+        { "type": "build_block", "description": "Add a note block or hopper to collect caught fish — your automation is complete!" },
+        {
+          "type": "interact_npc",
+          "description": "Talk to ProfBlock about how this connects to your fishing adventures",
+          "dialogue": {
+            "teacher": "Amazing work! 🎣 Remember how you learned about patience and timing in the fishing minigame? This redstone clock is the same concept — perfect timing creates perfect results!",
+            "studentPrompt": "What did you learn about fishing that applies here?",
+            "expectedConcepts": ["timing", "currents", "automation", "cycles"]
+          }
+        },
+        {
+          "type": "discovery",
+          "description": "Discovery Zone: Optimize your fishing farm clock! Can you adjust the repeater delays to catch fish more efficiently?",
+          "discovery": {
+            "id": "rb-fishing-clock-optimization",
+            "title": "The Perfect Timing Challenge",
+            "description": "Fishing in Minecraft has specific timing requirements. Too fast and you waste durability. Too slow and you miss fish. Find the optimal repeater delay setting!",
+            "solution": "The optimal fishing clock delay is around 2-3 ticks per repeater (1-tick or 2-tick setting). This gives the fishing rod enough time to cast and catch without wasting durability.",
+            "hints": [
+              "Think about what you learned in the fishing minigame about timing — how long does it take for a fish to bite?",
+              "Try setting both repeaters to 1-tick (fastest). Does it work? What about 4-tick (slowest)?",
+              "The sweet spot is usually 2-tick on each repeater — test it and count your catches over 1 minute!"
+            ],
+            "concepts": ["redstone-repeaters", "clock-circuits", "fishing-mechanics", "automation"],
+            "realWorldInsight": "This is exactly how industrial automation works! Factory robots, assembly lines, and even your dishwasher use clock signals and timing. Fishing farms in Minecraft are like mini factories — you're an engineer now! 🏭",
+            "crossGameConnection": "The patience you learned waiting for fish bites? That's called 'cycle time' in engineering. Your fishing experience gave you intuition for redstone timing!"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "id": "rb-fishing-q1",
+          "question": "What component creates a repeating on-off signal in a clock circuit?",
+          "type": "multiple_choice",
+          "options": ["A single redstone torch", "Two repeaters in a loop", "A lever flipped repeatedly", "Redstone dust only"],
+          "answer": "Two repeaters in a loop",
+          "explanation": "Clock circuits use repeaters (or comparators) in a feedback loop. Each repeater powers the next, creating an endless cycle!",
+          "topic": "clock-circuits",
+          "difficulty": 2
+        },
+        {
+          "id": "rb-fishing-q2",
+          "question": "True or false: faster clock circuits always catch more fish in an auto-fishing farm.",
+          "type": "true_false",
+          "answer": false,
+          "explanation": "False! Too fast and the fishing rod recasts before catching anything. Too slow and you waste time. Optimal timing is key — just like real fishing!",
+          "topic": "fishing-optimization",
+          "difficulty": 3,
+          "commonMistake": "Students think 'faster is better' in automation. But timing matters — a clock at 1-tick might not catch anything, while 2-3 ticks is optimal!"
+        },
+        {
+          "id": "rb-fishing-q3",
+          "question": "What concept from the fishing minigame applies to redstone clock circuits?",
+          "type": "fill_blank",
+          "answer": ["timing", "patience", "cycles", "rhythm"],
+          "explanation": "Timing! In fishing, you wait for the right moment to reel in. In redstone clocks, you set the right delay for the circuit's purpose. Both are about understanding cycles and rhythm!",
+          "topic": "cross-game-connection",
+          "difficulty": 2
+        },
+        {
+          "id": "rb-fishing-q4",
+          "question": "What's the purpose of a hopper or note block in an automated fishing farm?",
+          "type": "multiple_choice",
+          "options": ["To make noise when fishing", "To automatically collect caught fish", "To power the clock circuit", "To scare away other fish"],
+          "answer": "To automatically collect caught fish",
+          "explanation": "Hoppers collect items (including fish) from above and funnel them into chests. Note blocks can be used as detectors — they make sound when items flow through, letting you know the farm is working!",
+          "topic": "automation-collection",
+          "difficulty": 2
+        }
+      ]
     }
   ]
 }
